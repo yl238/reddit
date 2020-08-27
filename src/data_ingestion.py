@@ -28,10 +28,14 @@ class RedditScraper(object):
         for session in new_posts:
             yield Post(session)
 
+    def get_data(self, limit):
+        data = []
+        for post in self.scrape(limit):
+            data.append(post.__dict__())
+        df = pd.DataFrame.from_records(data)
+        return df
+
 if __name__ == '__main__':
     scraper = RedditScraper('usertesting')
-    data = []
-    for post in scraper.scrape(limit=1000):
-        data.append(post.__dict__())
-    df = pd.DataFrame.from_records(data)
-    df.to_csv('reddit_scrape.csv', index=False)
+    df = scraper.get_data(10)
+    df.to_csv('reddit_scrape_tmp.csv', index=False)
