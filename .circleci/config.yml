@@ -4,6 +4,7 @@ jobs:
     working_directory: ~/project
     docker:
       - image: circleci/python:3.7.2
+       
     steps:
       - checkout
       - run:
@@ -15,6 +16,7 @@ jobs:
             pip install -r packages/random_forest_model/requirements.txt
             chmod +x ./scripts/fetch_kaggle_dataset.sh
             ./scripts/fetch_kaggle_dataset.sh
+            unzip -o packages/random_forest_model/random_forest_model/dataset/*.zip
             py.test -vv packages/random_forest_model/tests
 
 workflows:
