@@ -39,7 +39,7 @@ class DatasetCreator(BaseEstimator, TransformerMixin):
     
     def _convert_to_datetime(self, X):
         X['created_at'] = pd.to_datetime(X['created_at'])
-        return X.sort_values(by='created_at')
+        return X.sort_values(by='created_at').reset_index()
     
     def fit(self, X, y=None):
         return self
