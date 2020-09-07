@@ -37,5 +37,5 @@ class RedditScraper(object):
 
 if __name__ == '__main__':
     scraper = RedditScraper('usertesting')
-    df = scraper.get_data(10)
-    df.to_csv('reddit_scrape_tmp.csv', index=False)
+    df = scraper.get_data(1000)
+    df.to_csv('../dataset/reddit_scrape.csv', index=False)
