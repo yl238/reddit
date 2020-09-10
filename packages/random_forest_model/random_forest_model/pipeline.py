@@ -2,8 +2,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 
-from rf_model.processing import features
-from rf_model.processing import preprocessor as pp
+from random_forest_model.processing import features
+from random_forest_model.processing import preprocessor as pp
 
 VARIABLES_TO_DROP = ['title', 'score', 'num_comments', 'created_at']
 

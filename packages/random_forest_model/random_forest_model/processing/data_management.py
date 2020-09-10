@@ -3,9 +3,9 @@ import pandas as pd
 import joblib
 from sklearn.pipeline import Pipeline
 
-import rf_model
+import random_forest_model
 
-PACKAGE_ROOT = pathlib.Path(rf_model.__file__).resolve().parent
+PACKAGE_ROOT = pathlib.Path(random_forest_model.__file__).resolve().parent
 TRAINED_PIPELINE_DIR = PACKAGE_ROOT / "trained_pipelines"
 DATASET_DIR = PACKAGE_ROOT / "datasets"
 

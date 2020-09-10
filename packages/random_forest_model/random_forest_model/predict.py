@@ -2,11 +2,11 @@ import pathlib
 import numpy as np 
 import pandas as pd 
 
-import rf_model
-from rf_model.processing.preprocessor import ValidTextCreator
-from rf_model.processing.data_management import load_pipeline, load_dataset, save_dataset
+import random_forest_model
+from random_forest_model.processing.preprocessor import ValidTextCreator
+from random_forest_model.processing.data_management import load_pipeline, load_dataset, save_dataset
 
-PACKAGE_ROOT = pathlib.Path(rf_model.__file__).resolve().parent
+PACKAGE_ROOT = pathlib.Path(random_forest_model.__file__).resolve().parent
 
 
 vectorizer_pipeline_name = 'vectorizer_pipe.pkl'

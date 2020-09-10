@@ -3,14 +3,14 @@ import pandas as pd
 
 from sklearn.metrics import classification_report
 
-import rf_model
-from rf_model.processing.preprocessor import ValidTextCreator
-from rf_model.pipeline import vectorizer_pipe, train_pipe
-from rf_model.processing.data_management import save_pipeline
+import random_forest_model
+from random_forest_model.processing.preprocessor import ValidTextCreator
+from random_forest_model.pipeline import vectorizer_pipe, train_pipe
+from random_forest_model.processing.data_management import save_pipeline
 
 TARGET = 'label'
 if __name__ == '__main__':
-    path = Path(rf_model.__file__).resolve().parent
+    path = Path(random_forest_model.__file__).resolve().parent
 
     file = path / "datasets/reddit_raw_with_labels.csv"
     df = pd.read_csv(file)

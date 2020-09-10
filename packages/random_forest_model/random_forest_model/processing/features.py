@@ -8,7 +8,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 import spacy
 nlp = spacy.load('en_core_web_sm')
-STOPWORD_EXCEPTIONS = ["whatever", "whenever", "about", "nothing", "empty", "none", "more", "somewhere", "most", "not", "never"]
+STOPWORD_EXCEPTIONS = ["whatever", "whenever", "about", "nothing", \
+    "empty", "none", "more", "somewhere", "most", "not", "never"]
 nlp.Defaults.stop_words -= set(STOPWORD_EXCEPTIONS)
 
 
@@ -59,7 +60,8 @@ class TextTokenizer(BaseEstimator, TransformerMixin):
         return [t.lemma_ for t in nlp(text) if not t.is_stop and len(t.lemma_) > 1]
     
     def _remove_non_ascii(self, words):
-        """Remove non-ASCII characters from list of tokenized words."""
+        """Remove non-ASCII characters from list 
+        of tokenized words."""
         new_words = []
         for word in words:
             new_word = unicodedata.normalize('NFKD', word).encode('ascii', 'ignore').decode('utf-8', 'ignore')
@@ -67,7 +69,8 @@ class TextTokenizer(BaseEstimator, TransformerMixin):
         return new_words
     
     def _replace_numbers(self, words):
-        """Replace all integer occurrences in list of tokenized words with textual representation"""
+        """Replace all integer occurrences in list of 
+        tokenized words with textual representation"""
         p = inflect.engine()
         new_words = []
         for word in words:
