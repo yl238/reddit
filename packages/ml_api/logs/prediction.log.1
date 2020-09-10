@@ -1,0 +1,91 @@
+2020-09-09 16:40:15,692 ERROR: Exception on /user/sue [GET] [in /Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py:1892
+Traceback (most recent call last):
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/app/routes.py", line 82, in user
+    return render_template('user.html', user=user, posts=posts, form=form)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/app/templates/user.html", line 36, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'endif'. The innermost block that needs to be closed is 'if'.
+2020-09-09 16:41:04,797 INFO: Microblog startup [in /Users/sliu/UserTesting/reddit/packages/ml_api/app/__init__.py:46
+2020-09-09 17:22:01,173 INFO: Microblog startup [in /Users/sliu/UserTesting/reddit/packages/ml_api/app/__init__.py:46
+2020-09-09 17:29:08,078 INFO: Microblog startup [in /Users/sliu/UserTesting/reddit/packages/ml_api/app/__init__.py:46
+2020-09-09 17:29:12,065 ERROR: Exception on /user/sue [GET] [in /Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py:1892
+Traceback (most recent call last):
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/app/routes.py", line 75, in user
+    posts = Post.query.filer_by(author=username).all()
+AttributeError: 'BaseQuery' object has no attribute 'filer_by'
+2020-09-09 17:29:26,533 INFO: Microblog startup [in /Users/sliu/UserTesting/reddit/packages/ml_api/app/__init__.py:46
+2020-09-09 17:29:30,030 ERROR: Exception on /user/sue [GET] [in /Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py:1892
+Traceback (most recent call last):
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/app/routes.py", line 75, in user
+    posts = Post.query.filter_by(author=username).all()
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 1907, in filter_by
+    for key, value in kwargs.items()
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 1907, in <listcomp>
+    for key, value in kwargs.items()
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/sqlalchemy/sql/operators.py", line 365, in __eq__
+    return self.operate(eq, other)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 219, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/sqlalchemy/orm/relationships.py", line 1268, in __eq__
+    other, adapt_source=self.adapter
+  File "/Users/sliu/UserTesting/reddit/packages/ml_api/venv/lib/python3.7/site-packages/sqlalchemy/orm/relationships.py", line 1653, in _optimized_compare
+    "use %s.has(**criteria)." % self
+sqlalchemy.exc.ArgumentError: Mapped instance expected for relationship comparison to object.   Classes, queries and other SQL elements are not accepted in this context; for comparison with a subquery, use Post.author.has(**criteria).
