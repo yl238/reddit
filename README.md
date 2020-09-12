@@ -12,3 +12,4 @@ virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
+Navigate to the `notebooks/` directory and run the Jupyter notebooks! 
