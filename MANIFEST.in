@@ -1,0 +1,16 @@
+include *.txt
+include *.md
+include *.cfg
+include *.pkl
+recursive-include ./reddit/*
+
+include reddit/trained_models/*.pkl
+include reddit/VERSION
+include reddit/datasets/train.csv
+include reddit/datasets/test.csv
+
+include ./requirements.txt
+exclude *.log
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co] 
