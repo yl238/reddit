@@ -28,7 +28,6 @@ jobs:
           name: Train model
           command: |
             . venv/bin/activate
-
             python3 reddit/train_pipeline.py
       - run:
           name: Run tests
