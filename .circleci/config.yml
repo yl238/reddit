@@ -33,7 +33,7 @@ jobs:
           name: Run tests
           command: |
             . venv/bin/activate
-            PYTHONPATH=. py.test -vv reddit/tests
+            PYTHONPATH=. py.test -vv tests
 
 workflows:
   version: 2
