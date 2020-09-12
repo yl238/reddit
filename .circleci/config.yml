@@ -1,0 +1,43 @@
+version: 2
+
+defaults: &defaults
+  docker:
+    - image: circleci/python:3.7.2
+  working_directory: ~/project
+
+prepare_venv: &prepare_venv
+  run:
+    name: Create venv
+    command: |
+      python3 -m venv venv
+      source venv/bin/activate
+      pip install --upgrade pip
+
+jobs:
+  test_classifier:
+    <<: *defaults
+    steps:
+      - checkout
+      - *prepare_venv
+      - run:      
+          name: Install requirements
+          command: |
+            . venv/bin/activate
+            pip install -r requirements.txt
+      - run:
+          name: Train model
+          command: |
+            . venv/bin/activate
+
+            python3 reddit/train_pipeline.py
+      - run:
+          name: Run tests
+          command: |
+            . venv/bin/activate
+            py.test -vv reddit/tests
+
+workflows:
+  version: 2
+  test-all:
+    jobs:
+      - test_classifier     
